@@ -1,0 +1,66 @@
+body {
+    @include body-content;
+}
+
+.menu-wrapper {
+    @extend body;
+    @include column-center;
+    line-height: 2rem;
+    height: 90vh;
+    @include media($tablet) {
+        @include row-center;
+            width: 82%;
+        img {
+            width: 27%;
+        }
+    }
+    @include media($desktop) {
+        padding-left: 2rem;
+        justify-content: flex-start;
+        width: 90%;
+        img {
+            width: 13.8rem;
+        }
+    }
+}
+
+.nav-wrapper {
+    text-align:center;
+    line-height: 2.4rem;
+    margin-top: 0.5rem;
+    p {
+        font-size: 0.8rem;
+    }
+    @include media($tablet) {
+        margin-top: $zero-value;
+        margin-bottom: $base-size;
+        padding: $base-size;
+        p {
+            font-size: 0.9rem;
+            line-height: 2rem;
+        }
+    }
+    @include media($desktop) {
+        padding: 1.5rem;
+        width: 15%;
+        p {
+            font-size: $base-size;
+        }
+    }
+}
+
+.navigation {
+    height: 1.5rem;
+    width: 7.5rem;
+    font-family: $font;
+    font-size: $base-size;
+    outline: none;
+}
+
+.copyright p {
+    font-size: 0.9rem;
+    @include media($desktop) {
+        text-align: left;
+        padding-left: 2rem;
+    }
+}

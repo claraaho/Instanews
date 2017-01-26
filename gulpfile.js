@@ -1,10 +1,13 @@
 var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
-	rename = require('gulp-rename'), s
+	rename = require('gulp-rename'), 
 	browserSync = require('browser-sync'),
 	eslint = require('gulp-eslint'),
 	plumber = require('gulp-plumber'),
-	notify = require('gulp-notify');
+	notify = require('gulp-notify'),
+	sass = require('gulp-sass'),
+	autoprefixer = require('gulp-autoprefixer'),
+	cssnano = require('gulp-cssnano');
 
 var plumberErrorHandler = {
   errorHandler: notify.onError({
@@ -27,7 +30,7 @@ gulp.task('browser-sync', function() {
 			baseDir: './'
 		}
 	});
-	gulp.watch(['css/*css', 'js/*js']).on('change', browserSync.reload);
+	gulp.watch(['build/css/*.css', 'js/*.js']).on('change', browserSync.reload);
 });
 
 gulp.task('lint', function() {
@@ -38,9 +41,23 @@ gulp.task('lint', function() {
         .pipe(eslint.failAfterError()); 
 });
 
-gulp.task('watch', function() {
-   gulp.watch('js/*.js', ['scripts']);
+gulp.task('sass', function() {
+   gulp.src('./sass/style.scss')
+   	  .pipe(plumber(plumberErrorHandler))
+      .pipe(sass())
+      .pipe(autoprefixer({
+         browsers: ['last 2 versions']
+      }))
+      .pipe(gulp.dest('./build/css'))
+      .pipe(cssnano())
+      .pipe(rename('style.min.css'))
+      .pipe(gulp.dest('./build/css'));
 });
 
-gulp.task('default', ['watch', 'browser-sync', 'lint', 'plumber']);
+gulp.task('watch', function() {
+   gulp.watch('js/*.js', ['scripts']);
+   gulp.watch('sass/*.scss', ['sass']);
+});
+
+gulp.task('default', ['watch', 'browser-sync']);
 
