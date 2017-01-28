@@ -1,0 +1,35 @@
+
+.article-list {
+    @include column-wrap;
+    text-align:center;
+    @include media ($tablet) {
+        flex-direction: row;
+    }
+    li {
+        @include column-reverse;
+        position: relative;
+        width: $fullPercentage;
+        height: 26.65rem;
+        overflow: hidden;
+        @include media($tablet) {
+            width: 50%;
+        @include media($desktop) {
+            width: 25%;
+        }
+        }
+        img {
+            position: $absolutePosition;
+            height: $fullPercentage;
+            min-width: $fullPercentage;
+            align-self: center;
+            z-index: -1;
+        }
+        p {
+            position: $absolutePosition;
+            background-color: rgba(0,0,0,0.6);
+            padding: 0.5rem;
+            line-height: 1.5rem;
+            text-align: left;
+        }
+    }
+}

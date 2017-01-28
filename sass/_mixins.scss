@@ -16,6 +16,17 @@
     justify-content: center;
 }
 
+@mixin column-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+@mixin column-reverse {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 @mixin media($width) {
   @media only screen and (min-width: $width) {
     @content;
