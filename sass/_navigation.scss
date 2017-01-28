@@ -6,7 +6,11 @@ body {
     @extend body;
     @include column-center;
     line-height: 2rem;
-    height: 90vh;
+    height: 89vh;
+    img {
+        width: 13.7rem;
+    }
+    transition: height 2s ease;
     @include media($tablet) {
         @include row-center;
             width: 82%;
@@ -21,6 +25,28 @@ body {
         img {
             width: 13.8rem;
         }
+    }
+}
+
+.menu-change {
+    @extend .menu-wrapper;
+    height: auto;
+    padding: 2rem 0;
+    justify-content: center;
+    width: 100%;
+    img {
+        width: 9.5rem;
+    }
+    @include media($tablet) {
+        padding: 0.6rem 0;
+        width: 26rem;
+        img {
+            width: 4.2rem;
+            margin: 0 4rem;
+            }
+    }
+    @include media($desktop) {
+        padding: 0;
     }
 }
 
@@ -42,10 +68,17 @@ body {
     }
     @include media($desktop) {
         padding: 1.5rem;
-        width: 15%;
+        width: 21%;
         p {
             font-size: $baseSize;
         }
+    }
+}
+
+.nav-change {
+    @extend .nav-wrapper;
+    @include media($desktop) {
+        width: 50%;
     }
 }
 
@@ -57,10 +90,19 @@ body {
     outline: none;
 }
 
-.copyright p {
-    font-size: 0.9rem;
-    @include media($desktop) {
-        text-align: left;
-        padding-left: 2rem;
+.copyright {
+    p {
+        font-size: 0.9rem;
     }
+    @include media($desktop) {
+        padding-left: 2rem;
+        p {
+            text-align: left;
+        }
+    }
+}
+
+.copyright-change {
+    @extend .copyright;
+    padding: 2rem 0 3.5rem 2rem;
 }

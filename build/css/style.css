@@ -1,5 +1,5 @@
 /* Eric Meyer Reset */
-html, body, .menu-wrapper, div, span, applet, object, iframe,
+html, body, .menu-wrapper, .menu-change, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -24,7 +24,7 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block; }
 
-body, .menu-wrapper {
+body, .menu-wrapper, .menu-change {
   line-height: 1; }
 
 ol, ul {
@@ -75,12 +75,15 @@ html {
   background-color: #000000;
   font-size: 16px; }
 
-body, .menu-wrapper {
+* {
+  box-sizing: border-box; }
+
+body, .menu-wrapper, .menu-change {
   font-family: "open_sans", "Arial", sans-serif;
   font-size: 1rem;
   color: #FFFFFF; }
 
-.menu-wrapper {
+.menu-wrapper, .menu-change {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -90,45 +93,71 @@ body, .menu-wrapper {
   -ms-flex-align: center;
       align-items: center;
   line-height: 2rem;
-  height: 90vh; }
+  height: 89vh;
+  transition: height 2s ease; }
+  .menu-wrapper img, .menu-change img {
+    width: 13.7rem; }
   @media only screen and (min-width: 600px) {
-    .menu-wrapper {
+    .menu-wrapper, .menu-change {
       -ms-flex-direction: row;
           flex-direction: row;
       -ms-flex-pack: center;
           justify-content: center;
       width: 82%; }
-      .menu-wrapper img {
+      .menu-wrapper img, .menu-change img {
         width: 27%; } }
   @media only screen and (min-width: 1000px) {
-    .menu-wrapper {
+    .menu-wrapper, .menu-change {
       padding-left: 2rem;
       -ms-flex-pack: start;
           justify-content: flex-start;
       width: 90%; }
-      .menu-wrapper img {
+      .menu-wrapper img, .menu-change img {
         width: 13.8rem; } }
 
-.nav-wrapper {
+.menu-change {
+  height: auto;
+  padding: 2rem 0;
+  -ms-flex-pack: center;
+      justify-content: center;
+  width: 100%; }
+  .menu-change img {
+    width: 9.5rem; }
+  @media only screen and (min-width: 600px) {
+    .menu-change {
+      padding: 0.6rem 0;
+      width: 26rem; }
+      .menu-change img {
+        width: 4.2rem;
+        margin: 0 4rem; } }
+  @media only screen and (min-width: 1000px) {
+    .menu-change {
+      padding: 0; } }
+
+.nav-wrapper, .nav-change {
   text-align: center;
   line-height: 2.4rem;
   margin-top: 0.5rem; }
-  .nav-wrapper p {
+  .nav-wrapper p, .nav-change p {
     font-size: 0.8rem; }
   @media only screen and (min-width: 600px) {
-    .nav-wrapper {
+    .nav-wrapper, .nav-change {
       margin-top: 0;
       margin-bottom: 16px;
       padding: 16px; }
-      .nav-wrapper p {
+      .nav-wrapper p, .nav-change p {
         font-size: 0.9rem;
         line-height: 2rem; } }
   @media only screen and (min-width: 1000px) {
-    .nav-wrapper {
+    .nav-wrapper, .nav-change {
       padding: 1.5rem;
-      width: 15%; }
-      .nav-wrapper p {
+      width: 21%; }
+      .nav-wrapper p, .nav-change p {
         font-size: 16px; } }
+
+@media only screen and (min-width: 1000px) {
+  .nav-change {
+    width: 50%; } }
 
 .navigation {
   height: 1.5rem;
@@ -137,12 +166,17 @@ body, .menu-wrapper {
   font-size: 16px;
   outline: none; }
 
-.copyright p {
+.copyright p, .copyright-change p {
   font-size: 0.9rem; }
-  @media only screen and (min-width: 1000px) {
-    .copyright p {
-      text-align: left;
-      padding-left: 2rem; } }
+
+@media only screen and (min-width: 1000px) {
+  .copyright, .copyright-change {
+    padding-left: 2rem; }
+    .copyright p, .copyright-change p {
+      text-align: left; } }
+
+.copyright-change {
+  padding: 2rem 0 3.5rem 2rem; }
 
 .article-list {
   display: -ms-flexbox;
@@ -186,6 +220,6 @@ body, .menu-wrapper {
       line-height: 1.5rem;
       text-align: left; }
 
-.copyright {
+.copyright, .copyright-change {
   text-align: center;
   color: #c2c2c2; }

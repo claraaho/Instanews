@@ -31,9 +31,12 @@ $(function () {
 			console.log(filteredArray)
 
 			// Layout styling when articles append
-			$('.menu-wrapper').css({'height': 'auto', 'margin': '32px 0'});
-			$('img').css('width', '9.4rem');
-			$('footer').css('margin', '32px 0 55px 0');
+			$('.menu-wrapper').toggleClass('menu-change');
+			$('.nav-wrapper').toggleClass('nav-change');
+			$('.copyright').toggleClass('copyright-change');
+			// $('.menu-wrapper').css({'height': 'auto', 'margin': '32px 0'});
+			// $('img').css('width', '9.4rem');
+			// $('footer').css('margin', '32px 0 55px 0');
 			$results.append(articleInfo).slideDown('slow');
 		}).fail(function() {
 			$results.append('Sorry! There was a problem, please try again.');
