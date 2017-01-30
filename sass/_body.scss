@@ -1,12 +1,11 @@
 .article-list {
     text-align: center;
     @include media($tablet) {
-    display: flex;
-    flex-wrap: wrap;
+    @include flex-wrap;
     }
     li {
-    @include column-wrap;
-    text-align:center;
+    @include flex-wrap;
+    flex-direction: column;
     @include media ($tablet) {
         flex-direction: row;
         width: 50%;
@@ -34,7 +33,7 @@
             line-height: 1.5rem;
             text-align: left;
             color: $baseColor;
-            min-width: 100%;
+            min-width: $fullPercentage;
             bottom: 0;
         }
     }

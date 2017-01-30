@@ -230,8 +230,7 @@ body, .menu-wrapper, .menu-change {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     -ms-flex-direction: column;
-        flex-direction: column;
-    text-align: center; }
+        flex-direction: column; }
     @media only screen and (min-width: 600px) {
       .article-list li {
         -ms-flex-direction: row;

@@ -13,9 +13,8 @@ body {
         0% {transform: translate(-10px, 8px);}
         100% {transform: translate(0px, 0px);}
         }
-        animation: move 1s 1;
-        animation-fill-mode: forwards;
-        animation-timing-function: ease-in-out;
+        animation: move $animationTiming;
+        @include animation-specs;
     }
     @include media($tablet) {
         @include row-center;
@@ -26,9 +25,8 @@ body {
                 0% {transform: translate(15px, -15px);}
                 100% {transform: translate(0px, 0px);}
             }
-            animation: moveTablet 1s 1;
-            animation-fill-mode: forwards;
-            animation-timing-function: ease-in-out;
+            animation: moveTablet $animationTiming;
+            @include animation-specs;
         }
     }
     @include media($desktop) {
@@ -46,7 +44,7 @@ body {
     height: auto;
     padding: 2rem 0;
     justify-content: center;
-    width: 100%;
+    width: $fullPercentage;
     img {
         width: 9.5rem;
     }
@@ -60,9 +58,8 @@ body {
                 0% {transform: translate(15px, 0px);}
                 100% {transform: translate(0px, 0px);}
             }
-            animation: slideTablet 1s 1;
-            animation-fill-mode: forwards;
-            animation-timing-function: ease-in-out;
+            animation: slideTablet $animationTiming;
+            @include animation-specs;
             }
     }
     @include media($desktop) {
@@ -71,16 +68,15 @@ body {
 }
 
 .nav-wrapper {
-    text-align:center;
+    text-align: center;
     line-height: 2.4rem;
     margin-top: 0.5rem;
     @keyframes selectMobile {
         0% {transform: translate(0px, -15px);}
         100% {transform: translate(0px, 0px);}
         }
-    animation: selectMobile 1s 1;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out;
+    animation: selectMobile $animationTiming;
+    @include animation-specs;
     p {
         font-size: 0.8rem;
     }
@@ -92,9 +88,8 @@ body {
         0% {transform: translate(-15px, 0px);}
         100% {transform: translate(0px, 0px);}
         }
-        animation: selectTablet 1s 1;
-        animation-fill-mode: forwards;
-        animation-timing-function: ease-in-out;
+        animation: selectTablet $animationTiming;
+        @include animation-specs;
         p {
             font-size: 0.9rem;
             line-height: 2rem;
@@ -107,9 +102,8 @@ body {
         0% {transform: translate(-15px, 0px);}
         100% {transform: translate(0px, 0px);}
         }
-        animation: selectDesktop 1s 1;
-        animation-fill-mode: forwards;
-        animation-timing-function: ease-in-out;
+        animation: selectDesktop $animationTiming;
+        @include animation-specs;
         p {
             font-size: $baseSize;
         }
@@ -120,7 +114,7 @@ body {
     @extend .nav-wrapper;
     @include media($desktop) {
         width: 50%;
-        animation: none;
+        animation: $cancelValue;
     }
 }
 
@@ -129,5 +123,5 @@ body {
     width: 7.5rem;
     font-family: $font;
     font-size: 1.1rem;
-    outline: none;
+    outline: $cancelValue;
 }

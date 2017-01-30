@@ -4,6 +4,11 @@
     color: $baseColor;
 } 
 
+@mixin flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 @mixin column-center {
     display: flex;
     flex-direction: column;
@@ -16,15 +21,14 @@
     justify-content: center;
 }
 
-@mixin column-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-
 @mixin column-reverse {
     display: flex;
     flex-direction: column-reverse;
+}
+
+@mixin animation-specs {
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
 }
 
 @mixin media($width) {
