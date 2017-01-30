@@ -9,6 +9,12 @@ body {
     height: 89vh;
     img {
         width: 13.7rem;
+        // @keyframes move {
+        // 0% {transform: translate(0, 0);}
+        // 100% {transform: translate(20px, -5px);}
+        // }
+        // animation: move 1s 1;
+        // animation-fill-mode: forwards;
     }
     transition: height 2s ease;
     @include media($tablet) {
@@ -83,10 +89,10 @@ body {
 }
 
 .navigation {
-    height: 1.5rem;
+    height: 1.7rem;
     width: 7.5rem;
     font-family: $font;
-    font-size: $baseSize;
+    font-size: 1.1rem;
     outline: none;
 }
 

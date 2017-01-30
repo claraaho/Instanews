@@ -3,42 +3,53 @@ $(function () {
 		var selectValue = $('.navigation').val();
 		var $results = $('.article-list')
 		$results.empty()
-		// console.log(selectValue)
+
+		// $('.menu-wrapper').css({
+		// 	'height': 'auto',
+		// 	'padding': '2rem 0',
+		// 	// 'margin-left': '6rem',
+		// 	// 'width': '20%'
+		// })
+		
+		// $('.menu-wrapper img').css({
+		// 	'height': '50%',
+		// 	'width': '38%'
+		// })
+
+
+
 		var url = 'https://api.nytimes.com/svc/topstories/v2/' + selectValue + '.json'
-		// console.log(url)
 		url += '?' + $.param({
 			'api-key': '1f62158a878743f7a7cb556178d0130a',
-			'callback': selectValue
 		});
-		// console.log(url);
 		$.ajax({
 			url: url,
 			method: 'GET',
-		}).done(function (data) {
+		})
+		
+		.done(function (data) {
 			$results = $('.article-list')
 			var articleInfo = ''
-			var filteredArray = data.results.filter(function(result) {
+			var filteredArray = data.results.filter(function (result) {
 				return result.multimedia.length >= 5;
-				}).slice(0,12)
-			$.each(filteredArray, function(key, value) {
+			}).slice(0, 12)
+			$.each(filteredArray, function (key, value) {
 				var articleContent = value.abstract
 				var articlePic = '<img src=' + value.multimedia[4].url + '>'
+				// var articleLink = value.url
 				articleInfo += '<li>'
 				articleInfo += '<p>' + articleContent + '</p>'
 				articleInfo += articlePic
 				articleInfo += '</li>'
+				// articleInfo.setAttribute('href', articleLink);
 			});
-			console.log(filteredArray)
 
 			// Layout styling when articles append
-			$('.menu-wrapper').toggleClass('menu-change');
-			$('.nav-wrapper').toggleClass('nav-change');
-			$('.copyright').toggleClass('copyright-change');
-			// $('.menu-wrapper').css({'height': 'auto', 'margin': '32px 0'});
-			// $('img').css('width', '9.4rem');
-			// $('footer').css('margin', '32px 0 55px 0');
+			$('.menu-wrapper').toggleClass('menu-wrapper menu-change');
+			$('.nav-wrapper').toggleClass('nav-wrapper nav-change');
+			$('.copyright').toggleClass('copyright copyright-change');
 			$results.append(articleInfo).slideDown('slow');
-		}).fail(function() {
+		}).fail(function () {
 			$results.append('Sorry! There was a problem, please try again.');
 		});
 	})
