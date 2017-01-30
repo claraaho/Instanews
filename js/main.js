@@ -14,7 +14,7 @@ $(function () {
 			url: url,
 			method: 'GET',
 		})
-		
+
 		.done(function (data) {
 			$('.preloader').hide()
 			$results = $('.article-list')
@@ -38,6 +38,7 @@ $(function () {
 			$('.copyright').toggleClass('copyright copyright-change');
 			$results.append(articleInfo).slideDown('slow');
 		}).fail(function () {
+			$('.preloader').hide()
 			$results.append('Sorry! There was a problem, please try again.');
 		});
 	})

@@ -1,4 +1,5 @@
 .article-list {
+    text-align: center;
     @include media($tablet) {
     display: flex;
     flex-wrap: wrap;

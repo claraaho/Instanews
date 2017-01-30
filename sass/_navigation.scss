@@ -10,7 +10,7 @@ body {
     img {
         width: 13.7rem;
         @keyframes move {
-        0% {transform: translate(-20px, 8px);}
+        0% {transform: translate(-10px, 8px);}
         100% {transform: translate(0px, 0px);}
         }
         animation: move 1s 1;
@@ -23,7 +23,7 @@ body {
         img {
             width: 27%;
             @keyframes moveTablet {
-                0% {transform: translate(20px, -15px);}
+                0% {transform: translate(15px, -15px);}
                 100% {transform: translate(0px, 0px);}
             }
             animation: moveTablet 1s 1;
@@ -56,6 +56,13 @@ body {
         img {
             width: 4.2rem;
             margin: 0 4rem;
+                        @keyframes slideTablet {
+                0% {transform: translate(15px, 0px);}
+                100% {transform: translate(0px, 0px);}
+            }
+            animation: slideTablet 1s 1;
+            animation-fill-mode: forwards;
+            animation-timing-function: ease-in-out;
             }
     }
     @include media($desktop) {
@@ -97,7 +104,7 @@ body {
         padding: 1.5rem;
         width: 21%;
         @keyframes selectDesktop{
-        0% {transform: translate(-20px, 0px);}
+        0% {transform: translate(-15px, 0px);}
         100% {transform: translate(0px, 0px);}
         }
         animation: selectDesktop 1s 1;
@@ -113,6 +120,7 @@ body {
     @extend .nav-wrapper;
     @include media($desktop) {
         width: 50%;
+        animation: none;
     }
 }
 
