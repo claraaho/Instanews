@@ -9,19 +9,26 @@ body {
     height: 89vh;
     img {
         width: 13.7rem;
-        // @keyframes move {
-        // 0% {transform: translate(0, 0);}
-        // 100% {transform: translate(20px, -5px);}
-        // }
-        // animation: move 1s 1;
-        // animation-fill-mode: forwards;
+        @keyframes move {
+        0% {transform: translate(-20px, 8px);}
+        100% {transform: translate(0px, 0px);}
+        }
+        animation: move 1s 1;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
     }
-    transition: height 2s ease;
     @include media($tablet) {
         @include row-center;
             width: 82%;
         img {
             width: 27%;
+            @keyframes moveTablet {
+                0% {transform: translate(20px, -15px);}
+                100% {transform: translate(0px, 0px);}
+            }
+            animation: moveTablet 1s 1;
+            animation-fill-mode: forwards;
+            animation-timing-function: ease-in-out;
         }
     }
     @include media($desktop) {
@@ -60,6 +67,13 @@ body {
     text-align:center;
     line-height: 2.4rem;
     margin-top: 0.5rem;
+    @keyframes selectMobile {
+        0% {transform: translate(0px, -15px);}
+        100% {transform: translate(0px, 0px);}
+        }
+    animation: selectMobile 1s 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
     p {
         font-size: 0.8rem;
     }
@@ -67,6 +81,13 @@ body {
         margin-top: $zeroValue;
         margin-bottom: $baseSize;
         padding: $baseSize;
+            @keyframes selectTablet{
+        0% {transform: translate(-15px, 0px);}
+        100% {transform: translate(0px, 0px);}
+        }
+        animation: selectTablet 1s 1;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
         p {
             font-size: 0.9rem;
             line-height: 2rem;
@@ -75,6 +96,13 @@ body {
     @include media($desktop) {
         padding: 1.5rem;
         width: 21%;
+        @keyframes selectDesktop{
+        0% {transform: translate(-20px, 0px);}
+        100% {transform: translate(0px, 0px);}
+        }
+        animation: selectDesktop 1s 1;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
         p {
             font-size: $baseSize;
         }
@@ -94,21 +122,4 @@ body {
     font-family: $font;
     font-size: 1.1rem;
     outline: none;
-}
-
-.copyright {
-    p {
-        font-size: 0.9rem;
-    }
-    @include media($desktop) {
-        padding-left: 2rem;
-        p {
-            text-align: left;
-        }
-    }
-}
-
-.copyright-change {
-    @extend .copyright;
-    padding: 2rem 0 3.5rem 2rem;
 }

@@ -1,22 +1,10 @@
 $(function () {
+	$('.preloader').hide()
 	$('.navigation').on('change', function () {
 		var selectValue = $('.navigation').val();
 		var $results = $('.article-list')
 		$results.empty()
-
-		// $('.menu-wrapper').css({
-		// 	'height': 'auto',
-		// 	'padding': '2rem 0',
-		// 	// 'margin-left': '6rem',
-		// 	// 'width': '20%'
-		// })
-		
-		// $('.menu-wrapper img').css({
-		// 	'height': '50%',
-		// 	'width': '38%'
-		// })
-
-
+		$('.preloader').show()
 
 		var url = 'https://api.nytimes.com/svc/topstories/v2/' + selectValue + '.json'
 		url += '?' + $.param({
@@ -28,6 +16,7 @@ $(function () {
 		})
 		
 		.done(function (data) {
+			$('.preloader').hide()
 			$results = $('.article-list')
 			var articleInfo = ''
 			var filteredArray = data.results.filter(function (result) {
@@ -36,12 +25,11 @@ $(function () {
 			$.each(filteredArray, function (key, value) {
 				var articleContent = value.abstract
 				var articlePic = '<img src=' + value.multimedia[4].url + '>'
-				// var articleLink = value.url
-				articleInfo += '<li>'
+				var articleLink = value.url
+				articleInfo += '<li><a href=' + articleLink + ' target="_blank">'
 				articleInfo += '<p>' + articleContent + '</p>'
 				articleInfo += articlePic
-				articleInfo += '</li>'
-				// articleInfo.setAttribute('href', articleLink);
+				articleInfo += '</a></li>'
 			});
 
 			// Layout styling when articles append

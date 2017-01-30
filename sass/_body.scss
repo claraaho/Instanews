@@ -1,22 +1,24 @@
-
 .article-list {
+    @include media($tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    }
+    li {
     @include column-wrap;
     text-align:center;
     @include media ($tablet) {
         flex-direction: row;
+        width: 50%;
     }
-    li {
-        @include column-reverse;
+    @include media($desktop) {
+        width: 25%;
+    }
+    a{
+        display: flex;
         position: relative;
         width: $fullPercentage;
         height: 26.65rem;
         overflow: hidden;
-        @include media($tablet) {
-            width: 50%;
-        @include media($desktop) {
-            width: 25%;
-        }
-        }
         img {
             position: $absolutePosition;
             height: $fullPercentage;
@@ -30,7 +32,18 @@
             padding: 0.5rem;
             line-height: 1.5rem;
             text-align: left;
+            color: $baseColor;
             min-width: 100%;
+            bottom: 0;
         }
+    }
+  }
+}
+
+.preloader {
+    text-align: center;
+    img {
+        width: 40px;
+        height: 40px;
     }
 }
