@@ -10,20 +10,28 @@ body {
     img {
         width: 13.7rem;
         @keyframes move {
-        0% {transform: translate(-10px, 8px);}
-        100% {transform: translate(0px, 0px);}
+            0% {
+                transform: translate(-10px, 8px);
+            }
+            100% {
+                transform: translate(0px, 0px);
+            }
         }
         animation: move $animationTiming;
         @include animation-specs;
     }
     @include media($tablet) {
         @include row-center;
-            width: 82%;
+        width: 82%;
         img {
             width: 27%;
             @keyframes moveTablet {
-                0% {transform: translate(15px, -15px);}
-                100% {transform: translate(0px, 0px);}
+                0% {
+                    transform: translate(15px, -15px);
+                }
+                100% {
+                    transform: translate(0px, 0px);
+                }
             }
             animation: moveTablet $animationTiming;
             @include animation-specs;
@@ -54,13 +62,17 @@ body {
         img {
             width: 4.2rem;
             margin: 0 4rem;
-                        @keyframes slideTablet {
-                0% {transform: translate(15px, 0px);}
-                100% {transform: translate(0px, 0px);}
+            @keyframes slideTablet {
+                0% {
+                    transform: translate(15px, 0px);
+                }
+                100% {
+                    transform: translate(0px, 0px);
+                }
             }
             animation: slideTablet $animationTiming;
             @include animation-specs;
-            }
+        }
     }
     @include media($desktop) {
         padding: 0;
@@ -72,9 +84,13 @@ body {
     line-height: 2.4rem;
     margin-top: 0.5rem;
     @keyframes selectMobile {
-        0% {transform: translate(0px, -15px);}
-        100% {transform: translate(0px, 0px);}
+        0% {
+            transform: translate(0px, -15px);
         }
+        100% {
+            transform: translate(0px, 0px);
+        }
+    }
     animation: selectMobile $animationTiming;
     @include animation-specs;
     p {
@@ -84,9 +100,13 @@ body {
         margin-top: $zeroValue;
         margin-bottom: $baseSize;
         padding: $baseSize;
-            @keyframes selectTablet{
-        0% {transform: translate(-15px, 0px);}
-        100% {transform: translate(0px, 0px);}
+        @keyframes selectTablet {
+            0% {
+                transform: translate(-15px, 0px);
+            }
+            100% {
+                transform: translate(0px, 0px);
+            }
         }
         animation: selectTablet $animationTiming;
         @include animation-specs;
@@ -98,9 +118,13 @@ body {
     @include media($desktop) {
         padding: 1.5rem;
         width: 21%;
-        @keyframes selectDesktop{
-        0% {transform: translate(-15px, 0px);}
-        100% {transform: translate(0px, 0px);}
+        @keyframes selectDesktop {
+            0% {
+                transform: translate(-15px, 0px);
+            }
+            100% {
+                transform: translate(0px, 0px);
+            }
         }
         animation: selectDesktop $animationTiming;
         @include animation-specs;

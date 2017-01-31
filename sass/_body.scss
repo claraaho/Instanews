@@ -2,24 +2,24 @@
     text-align: center;
     justify-content: center;
     @include media($tablet) {
-    @include flex-wrap;
+        @include flex-wrap;
     }
     li {
-    @include flex-wrap;
-    flex-direction: column;
-    @include media ($tablet) {
-        flex-direction: row;
-        width: 50%;
-    }
-    @include media($desktop) {
-        width: 25%;
-    }
-    a {
-        display: flex;
-        position: relative;
-        width: $fullPercentage;
-        height: 26.65rem;
-        overflow: hidden;
+        @include flex-wrap;
+        flex-direction: column;
+        @include media ($tablet) {
+            flex-direction: row;
+            width: 50%;
+        }
+        @include media($desktop) {
+            width: 25%;
+        }
+        a {
+            display: flex;
+            position: relative;
+            width: $fullPercentage;
+            height: 26.65rem;
+            overflow: hidden;
         }
         img {
             position: $absolutePosition;
@@ -30,7 +30,7 @@
         }
         p {
             position: $absolutePosition;
-            background-color: rgba(0,0,0,0.6);
+            background-color: rgba(0, 0, 0, 0.6);
             padding: 0.5rem;
             line-height: 1.5rem;
             text-align: left;
@@ -39,8 +39,7 @@
             bottom: 0;
         }
     }
-  }
-
+}
 
 .preloader {
     text-align: center;
