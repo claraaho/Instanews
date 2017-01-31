@@ -20,3 +20,4 @@ Instanew is a news article website we were talked to build for our project 2 in 
 #TODO
  * Implement text to appear when hovering
  * Style select box with Selectric
+ * Fix up CSS some more
