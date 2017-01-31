@@ -217,7 +217,9 @@ body, .menu-wrapper, .menu-change {
   outline: none; }
 
 .article-list {
-  text-align: center; }
+  text-align: center;
+  -ms-flex-pack: center;
+      justify-content: center; }
   @media only screen and (min-width: 600px) {
     .article-list {
       display: -ms-flexbox;
@@ -246,23 +248,21 @@ body, .menu-wrapper, .menu-change {
       width: 100%;
       height: 26.65rem;
       overflow: hidden; }
-      .article-list li a img {
-        position: absolute;
-        height: 100%;
-        min-width: 100%;
-        -ms-flex-item-align: center;
-            -ms-grid-row-align: center;
-            align-self: center;
-        z-index: -1; }
-      .article-list li a p {
-        position: absolute;
-        background-color: rgba(0, 0, 0, 0.6);
-        padding: 0.5rem;
-        line-height: 1.5rem;
-        text-align: left;
-        color: #FFFFFF;
-        min-width: 100%;
-        bottom: 0; }
+    .article-list li img {
+      position: absolute;
+      height: 100%;
+      min-width: 100%;
+      left: -9rem;
+      z-index: -1; }
+    .article-list li p {
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 0.5rem;
+      line-height: 1.5rem;
+      text-align: left;
+      color: #FFFFFF;
+      min-width: 100%;
+      bottom: 0; }
 
 .preloader {
   text-align: center; }

@@ -1,5 +1,6 @@
 .article-list {
     text-align: center;
+    justify-content: center;
     @include media($tablet) {
     @include flex-wrap;
     }
@@ -13,17 +14,18 @@
     @include media($desktop) {
         width: 25%;
     }
-    a{
+    a {
         display: flex;
         position: relative;
         width: $fullPercentage;
         height: 26.65rem;
         overflow: hidden;
+        }
         img {
             position: $absolutePosition;
             height: $fullPercentage;
             min-width: $fullPercentage;
-            align-self: center;
+            left: -9rem;
             z-index: -1;
         }
         p {
@@ -38,7 +40,7 @@
         }
     }
   }
-}
+
 
 .preloader {
     text-align: center;
