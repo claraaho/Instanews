@@ -72,7 +72,6 @@ table {
   font-style: italic; }
 
 html {
-  background-color: #000000;
   font-size: 16px; }
 
 * {
@@ -81,7 +80,8 @@ html {
 body, .menu-wrapper, .menu-change {
   font-family: "open_sans", "Arial", sans-serif;
   font-size: 1rem;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  background-color: #000; }
 
 .menu-wrapper, .menu-change {
   display: -ms-flexbox;
@@ -252,7 +252,6 @@ body, .menu-wrapper, .menu-change {
       position: absolute;
       height: 100%;
       min-width: 100%;
-      left: -9rem;
       z-index: -1; }
     .article-list li p {
       position: absolute;
