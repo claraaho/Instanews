@@ -1,5 +1,8 @@
 $(function () {
 	$('.preloader').hide()
+
+	$('select').selectric();
+
 	$('.navigation').on('change', function () {
 		var selectValue = $('.navigation').val();
 		var $results = $('.article-list')
@@ -10,6 +13,7 @@ $(function () {
 		url += '?' + $.param({
 			'api-key': '1f62158a878743f7a7cb556178d0130a',
 		});
+		console.log(url);
 		$.ajax({
 				url: url,
 				method: 'GET',
