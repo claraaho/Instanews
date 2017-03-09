@@ -1,9 +1,8 @@
 $(function () {
-	$('.preloader').hide()
-
+	$('.preloader').hide();
 	$('select').selectric();
 
-	$('.navigation').on('change', function () {
+	$('.navigation').on('change', function (event) {
 		var selectValue = $('.navigation').val();
 		var $results = $('.article-list')
 		$results.empty()
@@ -13,7 +12,7 @@ $(function () {
 		url += '?' + $.param({
 			'api-key': '1f62158a878743f7a7cb556178d0130a',
 		});
-		console.log(url);
+
 		$.ajax({
 				url: url,
 				method: 'GET',
@@ -30,8 +29,8 @@ $(function () {
 					var articleContent = value.abstract
 					var articlePic = '<img src=' + value.multimedia[4].url + '>'
 					var articleLink = value.url
-					articleInfo += '<li><a href=' + articleLink + ' target="_blank">'
-					articleInfo += '<p>' + articleContent + '</p>'
+					articleInfo += '<li class="test"><a href=' + articleLink + ' target="_blank">'
+					articleInfo += '<p class="article-text">' + articleContent + '</p>'
 					articleInfo += articlePic
 					articleInfo += '</a></li>'
 				});

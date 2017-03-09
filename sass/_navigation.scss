@@ -96,6 +96,7 @@ body {
     @include animation-specs;
     p {
         font-size: 0.8rem;
+        color: #BD9607;
     }
     @include media($tablet) {
         text-align: left;
