@@ -210,7 +210,8 @@ table {
   display: block;
   padding: 8px;
   color: #D1A30B;
-  cursor: pointer; }
+  cursor: pointer;
+  text-align: left; }
 
 .selectric-items li.selected {
   background: #1A191A;
