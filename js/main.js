@@ -42,8 +42,9 @@ $(function () {
 
 				$results.append(articleInfo).slideDown('slow');
 			}).fail(function () {
-				$('.preloader').hide()
 				$results.append('<li class="error-text">Sorry! There was a problem, please try again.</li>');
+			}).always(function () {
+				$('.preloader').hide()
 			});
 	})
 })
