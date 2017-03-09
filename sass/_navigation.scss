@@ -49,6 +49,8 @@ body {
 }
 
 .menu-change {
+    position: relative;
+    z-index: 9999;
     @extend .menu-wrapper;
     height: auto;
     padding: 2rem 0;

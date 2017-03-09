@@ -2,11 +2,16 @@ $(function () {
 	$('.preloader').hide();
 	$('select').selectric();
 
-	$('.navigation').on('change', function (event) {
+	$('.navigation').on('change', function () {
 		var selectValue = $('.navigation').val();
 		var $results = $('.article-list')
 		$results.empty()
 		$('.preloader').show()
+		
+		// Layout styling when articles append
+		$('.menu-wrapper').toggleClass('menu-wrapper menu-change');
+		$('.nav-wrapper').toggleClass('nav-wrapper nav-change');
+		$('.copyright').toggleClass('copyright copyright-change');
 
 		var url = 'https://api.nytimes.com/svc/topstories/v2/' + selectValue + '.json'
 		url += '?' + $.param({
@@ -35,14 +40,10 @@ $(function () {
 					articleInfo += '</a></li>'
 				});
 
-				// Layout styling when articles append
-				$('.menu-wrapper').toggleClass('menu-wrapper menu-change');
-				$('.nav-wrapper').toggleClass('nav-wrapper nav-change');
-				$('.copyright').toggleClass('copyright copyright-change');
 				$results.append(articleInfo).slideDown('slow');
 			}).fail(function () {
 				$('.preloader').hide()
-				$results.append('Sorry! There was a problem, please try again.');
+				$results.append('<li class="error-text">Sorry! There was a problem, please try again.</li>');
 			});
 	})
 })

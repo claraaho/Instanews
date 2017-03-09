@@ -1,6 +1,12 @@
 .article-list {
     text-align: center;
     justify-content: center;
+    .error-text {
+        font-size: 0.9rem;
+        width: 100%;
+        flex-direction: column;
+        font-style: italic;
+    }
     @include media($tablet) {
         @include flex-wrap;
     }
@@ -21,6 +27,7 @@
             height: 26.65rem;
             overflow: hidden;
             text-decoration: $cancelValue;
+            z-index: 0;
         }
         img {
             position: $absolutePosition;
