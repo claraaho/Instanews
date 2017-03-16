@@ -36,16 +36,16 @@
             z-index: -1;
         }
         .article-text {
-                position: $absolutePosition;
-                background-color: rgba(0, 0, 0, 0.6);
-                padding: 0.5rem;
-                line-height: 1.5rem;
-                text-align: left;
-                color: $baseColor;
-                min-width: $fullPercentage;
-                bottom: -161px;
-                height: 10rem;
-                transition: bottom 0.9s ease;
+            position: $absolutePosition;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 0.5rem;
+            line-height: 1.5rem;
+            text-align: left;
+            color: $baseColor;
+            min-width: $fullPercentage;
+            bottom: -161px;
+            height: 10rem;
+            transition: bottom 0.9s ease;
         }
         &:hover {
             .article-text {
