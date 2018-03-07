@@ -485,9 +485,12 @@ body, .menu-wrapper, .menu-change {
       text-align: left;
       color: #FFFFFF;
       min-width: 100%;
-      bottom: -161px;
+      bottom: 0;
       height: 10rem;
       transition: bottom 0.9s ease; }
+      @media only screen and (min-width: 1000px) {
+        .article-list li .article-text {
+          bottom: -161px; } }
     .article-list li:hover .article-text {
       bottom: 0; }
 

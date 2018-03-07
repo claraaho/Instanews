@@ -43,9 +43,12 @@
             text-align: left;
             color: $baseColor;
             min-width: $fullPercentage;
-            bottom: -161px;
+            bottom: 0;
             height: 10rem;
             transition: bottom 0.9s ease;
+            @include media($desktop) {
+                bottom: -161px;
+            }
         }
         &:hover {
             .article-text {
