@@ -18,6 +18,7 @@ $(function () {
 			'api-key': '1f62158a878743f7a7cb556178d0130a',
 		});
 
+		console.log(url);
 		$.ajax({
 				url: url,
 				method: 'GET',
@@ -25,6 +26,7 @@ $(function () {
 
 			.done(function (data) {
 				$('.preloader').hide()
+				console.log(url);
 				$results = $('.article-list')
 				var articleInfo = ''
 				var filteredArray = data.results.filter(function (result) {
